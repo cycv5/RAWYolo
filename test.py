@@ -28,16 +28,11 @@ def decode_yolov8_outputs(raw_outputs, conf_threshold=0.52, iou_threshold=0.45):
     boxes_xywh = pred[..., :4]  # (B, num_boxes, 4)
     class_logits = pred[..., 4:]  # (B, num_boxes, num_classes)
 
-
     # Apply sigmoid to the box center coordinates (if they are normalized) and class scores.
     # Depending on your training, you might also need to apply a sigmoid to the box coordinates.
     boxes_xywh = boxes_xywh / 640.0
     class_scores = torch.sigmoid(class_logits)
 
-    # print(boxes_xywh)
-    # print(class_scores)
-
-    # For YOLOv8, the objectness score is typically merged into the class scores.
     # For each detection, choose the best class.
     cls_conf, cls_pred = class_scores.max(dim=-1)  # (B, num_boxes)
 
@@ -160,17 +155,9 @@ def evaluate(model, test_loader, device='cuda'):
             targs = decode_targets(targets)
             all_preds.extend(preds)
             all_targets.extend(targs)
-            # r = random.randint(0, 10)
-            # print(images[r])
+            # Uncomment for visualization
             # show_img(images[r], preds[r])
     print(f"--- Average inference time for 1 image: {((time.time() - start_time) / 427.0 * 1000)} ms ---")
-
-    # for i in range(10):
-    #     print("preds")
-    #     print(all_preds[i])
-    #     print("targs")
-    #     print(all_targets[i])
-    #     print("=============")
 
     # Update and compute the metric
     metric.update(all_preds, all_targets)
