@@ -1,0 +1,13 @@
+# Path to dataset root directory
+path: D:\UofT\CSC2210_VMC\dataset_split
+
+# Training, validation, and test images (relative to 'path')
+train: train/images
+val: val/images
+test: test/images
+
+# Class names (update with your classes)
+names:
+  0: car
+  1: person
+  2: bicycle
