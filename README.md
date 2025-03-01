@@ -10,4 +10,4 @@ python test.py
 Libraries needed include:
 torch, torchvision, matplotlib.pyplot, tqdm, torchmetrics, ultralytics, numpy
 
-Note that data is organized in the dataset_split folder, only 16 test images are included here, but more can be added. Training images and labels can be placed with the same organization under dataset_split/train/. The labels are in the YOLO format, which is converted from PASCAL VOC XML using convert_annotation.py
+Note that data is organized in the dataset_split folder, only 16 test images and labels are included here, but more can be added. Training images and labels can be placed with the same organization under dataset_split/train/. The labels are in the YOLO format, which is converted from PASCAL VOC XML using convert_annotation.py
