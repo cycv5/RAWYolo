@@ -1,0 +1,9 @@
+--- Average inference time for 1 image: 10.956563770910616 ms ---
+All Results:
+{'map': tensor(0.7016), 'map_50': tensor(0.9312), 'map_75': tensor(0.8632), 'map_small': tensor(0.7016), 'map_medium': tensor(-1.), 'map_large': tensor(-1.), 'mar_1': tensor(0.6383), 'mar_10': tensor(0.7478), 'mar_100': tensor(0.7478), 'mar_small': tensor(0.7478), 'mar_medium': tensor(-1.), 'mar_large': tensor(-1.), 'map_per_class': tensor([0.7524, 0.6572, 0.6952]), 'mar_100_per_class': tensor([0.7896, 0.7115, 0.7424]), 'classes': tensor([0, 1, 2], dtype=torch.int32)}
+=====
+Key Results:
+mAP@0.50:0.95: tensor(0.7016)
+mAP@0.5: tensor(0.9312)
+mAP@0.75: tensor(0.8632)
+mAP per class (car, person, bicycle): tensor([0.7524, 0.6572, 0.6952])
